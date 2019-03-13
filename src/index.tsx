@@ -1,20 +1,19 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from 'ui/components/App';
-import Login from 'ui/components/Login';
 import worker from 'ui/assets/worker';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import { Theme } from 'ui/util/Theme';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import 'src/ui/styles/css/index.css';
 
+const theme = Theme();
+
 ReactDOM.render(
-  <Router>
-    <Switch>
-      <Route path='/login' component={Login} />
-      <Route path='/' component={App} />
-    </Switch>
-  </Router>,
+  <MuiThemeProvider theme={theme}>
+    <App />
+  </MuiThemeProvider>,
   document.getElementById('root') as HTMLElement
 );
 worker();

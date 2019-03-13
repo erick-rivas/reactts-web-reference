@@ -1,4 +1,5 @@
 @import "util.scss";
+
 .module {
   position: fixed;
   width: 100%;
@@ -51,6 +52,7 @@
 .send {
   margin-top: 20px;
   margin-bottom: 5px;
+  background-color: $primary-color;
 }
 
 .orLine {
@@ -73,7 +75,7 @@
 .outlook {
   margin-top: 10px;
   margin-bottom: 8px;
-  background-color: #0070c0 !important;
+  background-color: #0070c0;
   color: #fff;
 }
 

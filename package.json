@@ -7,15 +7,17 @@
     "@material-ui/core": "3.9.2",
     "@material-ui/icons": "3.0.2",
     "@types/react-router-dom": "4.3.1",
+    "faker": "^4.1.0",
     "npm-run-all": "4.1.5",
     "react": "16.8.4",
     "react-dom": "16.8.4",
     "react-router": "4.3.1",
-    "react-router-dom": "4.3.1"
+    "react-router-dom": "4.3.1",
+    "watch": "1.0.2"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ui/styles -o src/ui/styles/css",
-    "watch-css": "npm run build-css & node-sass-chokidar src/ui/styles -o src/ui/styles/css --watch --recursive",
+    "build-css": "node-sass-chokidar src/ui/styles/sass -o src/ui/styles/css && node css-modules.js",
+    "watch-css": "watch 'npm run-script build-css' src/ui/styles/sass",
     "start-ts": "react-scripts-ts start",
     "start": "npm-run-all -p watch-css start-ts",
     "build-ts": "react-scripts-ts build",

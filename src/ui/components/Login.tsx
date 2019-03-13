@@ -2,20 +2,15 @@ import * as React from 'react';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import * as styles from 'ui/styles/css/login';
 
-import 'ui/styles/css/login.css'
 
-
-class Login extends React.Component
+class Login extends React.Component<any, States>
 {
-  handleLogin(e: React.FormEvent<HTMLFormElement>)
-  {
-    e.preventDefault();
-  }
-
   public render() 
   {
-    const error = null;
+    const { error } = this.state;
+    const { onLogin } = this.state;
 
     const errorMessage =
       error ?
@@ -24,12 +19,12 @@ class Login extends React.Component
         </div> : null;
 
     return (
-      <div className="module">
-        <div className={"container" + ' animated zoomIn'}>
-          <div className="form">
-            <form onSubmit={this.handleLogin}>
+      <div className={styles.module}>
+        <div className={styles.container + ' animated zoomIn'}>
+          <div className={styles.form}>
+            <form onSubmit={onLogin}>
 
-              <h1 className={"title"}>Login</h1>
+              <h1 className={styles.title}>Login</h1>
 
               <TextField
                 name='email'
@@ -49,51 +44,57 @@ class Login extends React.Component
                 fullWidth /><br />
 
               <Button
-                className={"send"}
+                className={styles.send}
                 color='primary'
                 variant='raised'
                 type='submit'
                 fullWidth>
                 Send
-              </Button>
+          </Button>
               <br />
               {errorMessage}
             </form>
 
             <div>
-              <div className={"orLine"} />
-              <div className={"orText"}> o </div>
+              <div className={styles.orLine} />
+              <div className={styles.orText}> o </div>
             </div>
 
             <Button
-              className={"outlook"}
+              className={styles.outlook}
               variant='raised'
               fullWidth>
               Login with Outlook
-            </Button>
+        </Button>
             <br />
             <Button
-              className={"gmail"}
+              className={styles.gmail}
               variant='raised'
               fullWidth>
               Login with Gmail
-            </Button>
+        </Button>
 
           </div>
 
-          <div className={"signup"}>
+          <div className={styles.signup}>
             Don't have an account
-              <Button
-              className={"invite"}
+          <Button
+              className={styles.invite}
               variant='outlined'>
               Register
-            </Button>
+        </Button>
           </div>
 
         </div>
       </div>
     );
   }
+}
+
+interface States
+{
+  error?: string;
+  onLogin?: any;
 }
 
 export default Login;

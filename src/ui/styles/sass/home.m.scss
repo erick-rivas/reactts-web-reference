@@ -1,0 +1,59 @@
+@import "util.scss";
+$nav-width: 250px;
+$bar-height: 54px;
+
+.module {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa;
+}
+
+.loading {
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa;
+}
+
+.progress {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  @include align-vertical(200px);
+  @include align-horizontal(100px);
+}
+
+.nav {
+  z-index: 2;
+  position: absolute;
+  width: $nav-width;
+  height: 100%;
+  overflow-y: auto;
+  @include box-shadow(2px, 0px, 14px, rgba(0, 0, 0, 0.12));
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-left: $nav-width;
+  @include box-sizing(border-box);
+}
+
+.toolbar {
+  z-index: 3;
+  position: relative;
+  width: 100%;
+  height: $bar-height;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.content {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}

@@ -1,0 +1,45 @@
+@import "util.scss";
+
+.module {
+  width: 100%;
+  min-height: 100%;
+  background-color: $primary-color;
+  color: #fff;
+}
+
+.header {
+  margin-bottom: 14px;
+  padding: 16px 26px 19px 26px;
+  background-color: rgba(0, 50, 120, 0.07);
+}
+
+.headerTitle {
+  font-family: Didact;
+  font-size: 28px;
+  @include inline-vertical();
+}
+
+.headerTitle>span {
+  font-size: 0.75em;
+}
+
+.subheader {
+  margin-top: 12px;
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.navItem svg,
+.navItem span {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+a.active>div {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.active svg,
+.active span {
+  color: #fff;
+}

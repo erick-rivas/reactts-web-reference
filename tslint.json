@@ -1,7 +1,8 @@
 {
+  "defaultSeverity": "warning",
   "linterOptions": {
     "exclude": [
-      "src/**/*.tsx",
+      "css-modules.js",
       "config/**/*.js",
       "node_modules/**/*.ts",
       "coverage/lcov-report/*.js"
