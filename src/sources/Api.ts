@@ -5,7 +5,7 @@ import Team from "models/Team";
 import User from "models/User";
 import { MType } from "models/util/Const";
 
-interface Sql
+interface Api
 {
   getMatchList(fs: { teamId?: number }): Promise<Match[]>;
   getPlayerList(fs: { teamId?: number }): Promise<Player[]>;
@@ -24,4 +24,4 @@ interface Sql
   deleteMatch(matchId: number): Promise<void>;
 }
 
-export default Sql;
+export default Api;
